@@ -15,10 +15,7 @@ for (let i = 0; i < 4; i++) {
 }
 
 const valid = () => {
-    if((tour == MAX_TOUR) || (reponse.toString() == "1,1,1,1")){        
-        document.querySelector('.btn').setAttribute('value','Rejouer');
-        document.querySelector('.btn').setAttribute('onclick','rejouer()');
-    }
+
     console.log("Valid");
 
     for (let i = 0; i < 4; i++) {
@@ -74,7 +71,7 @@ const valid = () => {
 
         stateDiv.innerHTML = "Victoire.";
         document.querySelector('.statut_jeu').style.color = "turquoise !important"
-        document.querySelector('.statut_jeu').appendChild(stateDiv);;
+        document.querySelector('.statut_jeu').appendChild(stateDiv);
         
 
     }
@@ -85,7 +82,13 @@ const valid = () => {
         document.querySelector('.statut_jeu').appendChild(stateDiv);
 
     }
+
+    if((tour == MAX_TOUR) || (reponse.toString() == "1,1,1,1")){        
+        document.querySelector('.btn').setAttribute('value','Rejouer');
+        document.querySelector('.btn').setAttribute('onclick','rejouer()');
+    }
     tour++;   
+
 
 }
 
