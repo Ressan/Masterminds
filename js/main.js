@@ -70,19 +70,18 @@ const valid = () => {
     let stateDiv = document.createElement('div');
     if(reponse.toString() == "1,1,1,1")
     {
-        tour = MAX_TOUR + 1;
+       // tour = MAX_TOUR + 1;
 
         stateDiv.innerHTML = "Victoire.";
-        document.querySelector('.statut_jeu').style.color = "turquoise"
+        document.querySelector('.statut_jeu').style.color = "turquoise !important"
         document.querySelector('.statut_jeu').appendChild(stateDiv);;
         
-        //document.querySelector('.btn').replaceWith( <input type="submit" name="send" class="btn" id="btn-valider" value="Rejouer" onkeypress="enter" onclick={valid()}/>);
 
     }
     else if(tour == MAX_TOUR)
     {
         stateDiv.innerHTML = "Défaite.";
-        document.querySelector('.statut_jeu').style.color = "orangered";
+        document.querySelector('.statut_jeu').style.color = "orangered !important";
         document.querySelector('.statut_jeu').appendChild(stateDiv);
 
     }

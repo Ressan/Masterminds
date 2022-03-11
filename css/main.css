@@ -10,6 +10,7 @@
     /**font-size: var(width)*100px;**/
     color : slateblue;
     font-family: 'Bebas Neue', cursive;
+    
 }
 
 body{
@@ -19,6 +20,14 @@ body{
 .tour{
     margin: 2px;
     display: flex;
+    text-align: center;
+    justify-content: center;  
+}
+
+.statut_jeu{
+    color: aliceblue;
+    margin: 10px;
+    font-size: 50px;
     text-align: center;
     justify-content: center;  
 }
@@ -39,13 +48,6 @@ body{
     flex-direction: column;
 }
 
-.statut_jeu{
-    color: aliceblue;
-    margin: 10px;
-    font-size: 50px;
-    text-align: center;
-    justify-content: center;  
-}
 
 .reponse{
     font-size: 50px;
