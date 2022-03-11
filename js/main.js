@@ -16,6 +16,8 @@ for (let i = 0; i < 4; i++) {
 
 const valid = () => {
 
+   /**/
+
     console.log("Valid");
 
     for (let i = 0; i < 4; i++) {
@@ -64,34 +66,25 @@ const valid = () => {
         }
     }
     
-    let stateDiv = document.createElement('div');
     if(reponse.toString() == "1,1,1,1")
     {
-       // tour = MAX_TOUR + 1;
-
-        stateDiv.innerHTML = "Victoire.";
-        document.querySelector('.statut_jeu').style.color = "turquoise !important"
-        document.querySelector('.statut_jeu').appendChild(stateDiv);
-        
-
+        document.querySelector('.statut_jeu').append("Victoire.");
+        document.querySelector('.statut_jeu').style.color = "turquoise"
     }
     else if(tour == MAX_TOUR)
-    {
-        stateDiv.innerHTML = "Défaite.";
-        document.querySelector('.statut_jeu').style.color = "orangered !important";
-        document.querySelector('.statut_jeu').appendChild(stateDiv);
-
+    {  
+        document.querySelector('.statut_jeu').append('Défaite.');
+        document.querySelector('.statut_jeu').style.color = "orangered";
     }
+    /**/
 
     if((tour == MAX_TOUR) || (reponse.toString() == "1,1,1,1")){        
         document.querySelector('.btn').setAttribute('value','Rejouer');
         document.querySelector('.btn').setAttribute('onclick','rejouer()');
     }
+
     tour++;   
-
-
 }
-
 
 const rejouer = () => {
     //On rejoue (en rafraichissant la page)
