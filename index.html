@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+	   	    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        
+        -->
+        
+        <title>Mastermind</title>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div class = "column">
+            <h1 class="title">Mastermind</h1>
+            <div id="timer">a</div>
+        </div>
+        <section>
+            <div class="form">
+
+                <div><input 
+                    type="submit" 
+                    name="send" 
+                    class="btn"
+                    id="btn-valider"
+                    value="Valider" 
+                    onkeypress="enter"
+                    onclick={valid()}
+                    />
+                </div>
+
+                <div>
+                    <input type="number" name="answer1" class="answer answer1" min= "0" max = "9" value = "0" />
+                    <input type="number" name="answer2" class="answer answer2" min= "0" max = "9" value = "0" />
+                    <input type="number" name="answer3" class="answer answer3" min= "0" max = "9" value = "0" />
+                    <input type="number" name="answer4" class="answer answer4" min= "0" max = "9" value = "0" />    
+                </div>
+            </div>
+
+            <div class="statut_jeu">
+            </div>
+            
+            <div class="tour">
+            </div>
+            
+            <div class="reponse">
+            </div>
+        
+        </section>
+        <script src="js/main.js"></script>
+        
+    </body>
+</html>
+

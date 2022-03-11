@@ -1,0 +1,126 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap|Lora|Roboto");
+
+
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(13, 13, 13);
+    /**font-size: var(width)*100px;**/
+    color : slateblue;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body{
+   
+}
+
+.tour{
+    margin: 2px;
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+}
+
+.btn{
+    font-size: 50px;
+    color: whitesmoke ;
+    padding: 0px 10px;
+    border: solid ;
+    background-color: blueviolet ;
+    border-radius: 5%;
+}
+
+.form{
+    display: flex;
+    text-align: center;
+    justify-content: center;  /**center;**/
+    flex-direction: column;
+}
+
+.statut_jeu{
+    color: aliceblue;
+    margin: 10px;
+    font-size: 50px;
+    text-align: center;
+    justify-content: center;  
+}
+
+.reponse{
+    font-size: 50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;  
+    flex-direction: column;
+}
+
+.answer{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    border: solid 3px whitesmoke;
+    border-radius: 10%;
+}
+
+.title {
+    font-size: 75px;
+    margin: 1% auto;
+    /**text-shadow: 0px 0px 10px whitesmoke;**/
+}
+
+#timer{
+    color: black;
+    font-size: 30px;
+    margin: 1% auto;
+    /**text-shadow: 0px 0px 10px whitesmoke;**/
+}
+
+.column{
+    text-align: center;
+    justify-content: space-evenly;  /**center;**/
+}
+
+.row{
+    display: flex;
+    justify-content: space-evenly;  /**center;**/
+}
+
+/*
+.box{
+    width: 100px;
+    height: 100px;
+    border: 1px solid darkviolet;
+    box-shadow: 0px 0px 30px slateblue;
+    background-color: grey;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.box1:hover {
+    background-color: darkorchid;
+}
+
+.box2 {
+    position: absolute;
+    background-color: red ;
+}
+
+.box2:hover {
+    background-color: violet !important;
+}
+
+.box3 {
+    background-color: grey;
+}
+
+.box3:hover {
+    background-color: thistle;
+}*/
