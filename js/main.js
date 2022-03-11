@@ -5,7 +5,7 @@ console.warn('!');
     "use strict";
 
     let minute = 0;
-    let second = 2;
+    let second = 44;
     let millisecond = 1000;
     let hour = 0;
 
@@ -75,47 +75,55 @@ const valid = () => {
             answerBox.style.border = "solid 3px green";
         }
     }
-    
+    state_of_game();
+    tour++;   
+}
+
+function state_of_game()
+{
+    console.log('sog');
     if(reponse.toString() == "1,1,1,1")
     {
+        pause();
         document.querySelector('.statut_jeu').append("Victoire.");
         document.querySelector('.statut_jeu').style.color = "turquoise"
     }
-    else if(tour == MAX_TOUR)
+    else if(endTimer())
     {  
+        
+        console.log('sog');
         document.querySelector('.statut_jeu').append('Défaite.');
         document.querySelector('.statut_jeu').style.color = "orangered";
     }
-    /**/
 
-    if((tour == MAX_TOUR) || (reponse.toString() == "1,1,1,1")){        
+    if((reponse.toString() == "1,1,1,1") || endTimer()){        
         document.querySelector('.btn').setAttribute('value','Rejouer');
         document.querySelector('.btn').setAttribute('onclick','rejouer()');
     }
-
-    tour++;   
 }
+
+
 
 const rejouer = () => {
     //On rejoue (en rafraichissant la page)
     document.location.reload(false);
 }
 
-function start() {
-    pause();
-    cron = setInterval(() => { timer(); }, 10);
-}
 
 function pause() {
     clearInterval(cron);
 }
 
+function start() {
+    pause();
+    cron = setInterval(() => { timer(); }, 10);
+}
 function timer() {
-    if ((millisecond -= 10) == 0 || (second != 0 && minute != 0 && hour!= 0)) {
+    if ((millisecond -= 10) == 0 && second != 0) {
         millisecond = 1000;
         second--;
     }
-    if (second == 0 && minute != 0 && hour!= 0) {
+    if (second == 0 && minute != 0) {
         second = 60;
         minute--;
     }
@@ -123,23 +131,29 @@ function timer() {
         minute = 60;
         hour--;
     }
-      /*
-    if ((millisecond += 10) == 1000) {
-        millisecond = 0;
-        second++;
-      }
-      if (second == 60) {
-        second = 0;
-        minute++;
-      }
-      if (minute == 60) {
-        minute = 0;
-      }*/
+
+    if(endTimer() == true)
+    {
+        console.log('EndTimer');
+        pause();
+        state_of_game();
+    }
+
     document.getElementById('minute').innerText = returnData(minute);
     document.getElementById('second').innerText = returnData(second);
     document.getElementById('millisecond').innerText = returnData(millisecond);
 }
-  
+
+function endTimer()
+{
+    let fin = false;
+    if(hour == 0 && minute == 0 && second == 0 && millisecond == 0)
+    {
+        fin = true;
+    }
+    return fin;
+}
+
 function returnData(input) {
     return input > 10 ? input : `${input}`
 }
