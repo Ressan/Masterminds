@@ -79,6 +79,8 @@ const valid = () => {
     tour++;   
 }
 
+
+//Fonction qui gèrent la fin du jeu
 function state_of_game()
 {
     console.log('sog');
@@ -109,7 +111,6 @@ const rejouer = () => {
     document.location.reload(false);
 }
 
-
 function pause() {
     clearInterval(cron);
 }
@@ -118,6 +119,7 @@ function start() {
     pause();
     cron = setInterval(() => { timer(); }, 10);
 }
+
 function timer() {
     if ((millisecond -= 10) == 0 && second != 0) {
         millisecond = 1000;
