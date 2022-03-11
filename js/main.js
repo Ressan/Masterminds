@@ -2,6 +2,15 @@ console.log('Hello');
 console.error('World');
 console.warn('!');
 
+    "use strict";
+
+    let minute = 0;
+    let second = 2;
+    let millisecond = 1000;
+    let hour = 0;
+
+    let cron;
+
     let chiffreAlea = [];
     let reponse = [];
     let userAnswer = [];
@@ -15,7 +24,8 @@ for (let i = 0; i < 4; i++) {
 }
 
 const valid = () => {
-
+    if(tour == 1)
+        start();
    /**/
 
     console.log("Valid");
@@ -91,7 +101,48 @@ const rejouer = () => {
     document.location.reload(false);
 }
 
+function start() {
+    pause();
+    cron = setInterval(() => { timer(); }, 10);
+}
 
+function pause() {
+    clearInterval(cron);
+}
+
+function timer() {
+    if ((millisecond -= 10) == 0 || (second != 0 && minute != 0 && hour!= 0)) {
+        millisecond = 1000;
+        second--;
+    }
+    if (second == 0 && minute != 0 && hour!= 0) {
+        second = 60;
+        minute--;
+    }
+    if (minute == 00 && hour!= 0) {
+        minute = 60;
+        hour--;
+    }
+      /*
+    if ((millisecond += 10) == 1000) {
+        millisecond = 0;
+        second++;
+      }
+      if (second == 60) {
+        second = 0;
+        minute++;
+      }
+      if (minute == 60) {
+        minute = 0;
+      }*/
+    document.getElementById('minute').innerText = returnData(minute);
+    document.getElementById('second').innerText = returnData(second);
+    document.getElementById('millisecond').innerText = returnData(millisecond);
+}
+  
+function returnData(input) {
+    return input > 10 ? input : `${input}`
+}
 
 
 
