@@ -87,14 +87,28 @@ function state_of_game()
     {
         pause();
         document.querySelector('.statut_jeu').append("Victoire.");
-        document.querySelector('.statut_jeu').style.color = "turquoise"
+        document.querySelector('.statut_jeu').style.color = "turquoise";
+        document.querySelector("#minute").style.color = "turquoise";
+        document.querySelector("#second").style.color = "turquoise";
+        document.querySelector("#millisecond").style.color = "turquoise";
+
     }
     else if(endTimer() || tour == MAX_TOUR)
     {  
         pause();
         document.querySelector('.statut_jeu').append('Défaite.');
         document.querySelector('.statut_jeu').style.color = "orangered";
-    }
+        document.querySelector("#minute").style.color = "orangered";
+        document.querySelector("#second").style.color = "orangered";
+        document.querySelector("#millisecond").style.color = "orangered";
+        /*
+        document.getElementById('minute').innerText = returnData(minute);
+        document.getElementById('second').innerText = returnData(second);
+        document.getElementById('millisecond').innerText = returnData(millisecond);
+
+
+        */    
+       }
 
     if((reponse.toString() == "1,1,1,1") || endTimer() || tour == MAX_TOUR){        
         document.querySelector('.btn').setAttribute('value','Rejouer');
