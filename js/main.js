@@ -26,8 +26,7 @@ for (let i = 0; i < 4; i++) {
 const valid = () => {
     if(tour == 1)
         start();
-   /**/
-
+        
     console.log("Valid");
 
     for (let i = 0; i < 4; i++) {
@@ -101,13 +100,6 @@ function state_of_game()
         document.querySelector("#minute").style.color = "orangered";
         document.querySelector("#second").style.color = "orangered";
         document.querySelector("#millisecond").style.color = "orangered";
-        /*
-        document.getElementById('minute').innerText = returnData(minute);
-        document.getElementById('second').innerText = returnData(second);
-        document.getElementById('millisecond').innerText = returnData(millisecond);
-
-
-        */    
        }
 
     if((reponse.toString() == "1,1,1,1") || endTimer() || tour == MAX_TOUR){        
