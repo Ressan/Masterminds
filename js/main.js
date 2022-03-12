@@ -89,7 +89,7 @@ function state_of_game()
         document.querySelector('.statut_jeu').append("Victoire.");
         document.querySelector('.statut_jeu').style.color = "turquoise"
     }
-    else if(endTimer() && tour == MAX_TOUR)
+    else if(endTimer() || tour == MAX_TOUR)
     {  
         document.querySelector('.statut_jeu').append('Défaite.');
         document.querySelector('.statut_jeu').style.color = "orangered";
