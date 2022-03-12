@@ -91,11 +91,12 @@ function state_of_game()
     }
     else if(endTimer() || tour == MAX_TOUR)
     {  
+        pause();
         document.querySelector('.statut_jeu').append('Défaite.');
         document.querySelector('.statut_jeu').style.color = "orangered";
     }
 
-    if((reponse.toString() == "1,1,1,1") || endTimer()){        
+    if((reponse.toString() == "1,1,1,1") || endTimer() || tour == MAX_TOUR){        
         document.querySelector('.btn').setAttribute('value','Rejouer');
         document.querySelector('.btn').setAttribute('onclick','rejouer()');
     }
