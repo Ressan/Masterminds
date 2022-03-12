@@ -83,17 +83,14 @@ const valid = () => {
 //Fonction qui gèrent la fin du jeu
 function state_of_game()
 {
-    console.log('sog');
     if(reponse.toString() == "1,1,1,1")
     {
         pause();
         document.querySelector('.statut_jeu').append("Victoire.");
         document.querySelector('.statut_jeu').style.color = "turquoise"
     }
-    else if(endTimer())
+    else if(endTimer() && tour == MAX_TOUR)
     {  
-        
-        console.log('sog');
         document.querySelector('.statut_jeu').append('Défaite.');
         document.querySelector('.statut_jeu').style.color = "orangered";
     }
